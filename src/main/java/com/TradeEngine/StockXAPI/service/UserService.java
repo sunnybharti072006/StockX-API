@@ -4,6 +4,8 @@ import com.TradeEngine.StockXAPI.model.User;
 import com.TradeEngine.StockXAPI.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -23,5 +25,16 @@ public class UserService {
                 .build();
 
         return userRepository.save(user);
+    }
+
+    public User createDummyUser(String name, String email, String username) {
+        return User.builder()
+                .name(name)
+                .email(email)
+                .username(username)
+                .build();
+    }
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

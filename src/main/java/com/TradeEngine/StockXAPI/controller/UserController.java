@@ -1,12 +1,15 @@
 package com.TradeEngine.StockXAPI.controller;
 
 import com.TradeEngine.StockXAPI.dto.CreateUserRequest;
+import com.TradeEngine.StockXAPI.dto.UserDTO;
+import com.TradeEngine.StockXAPI.mapper.UserMapper;
 import com.TradeEngine.StockXAPI.model.User;
+import com.TradeEngine.StockXAPI.repository.UserRepository;
 import com.TradeEngine.StockXAPI.service.UserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
@@ -25,5 +28,12 @@ public class UserController {
                 request.getPassword()
         );
     }
+    @GetMapping("/alluser")
+    public List<UserDTO> getAllUsers() {
+        List<User> users = userService.getAllUsers();
 
+        return users.stream()
+                .map(UserMapper::toDTO)
+                .toList();
+    }
 }
