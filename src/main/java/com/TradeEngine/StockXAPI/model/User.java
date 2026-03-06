@@ -1,5 +1,6 @@
 package com.TradeEngine.StockXAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,9 +19,11 @@ public class User {
 
     private String name;
 
+    @JsonIgnore
     @Column(unique = true)
     private String email;
 
+    @JsonIgnore
     private String password;
 
     private String role;

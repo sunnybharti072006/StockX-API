@@ -6,25 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Stock {
+public class MarketNews {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String symbol;
-    private String name;
+    private String title;
 
-    private BigDecimal price;
+    private String description;
 
-    private Long totalShares;
+    private String impact; // POSITIVE / NEGATIVE / NEUTRAL
 
-
+    private LocalDateTime timestamp;
 }
