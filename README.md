@@ -103,7 +103,7 @@ springdoc-openapi-starter-webmvc-ui: 2.5.0
 ## 🛠️ Development Setup
 
 ### Java (Maven) Setup
-1. Install Java (JDK 11+ recommended)
+1. Install Java (JDK 21+ recommended)
 2. Install Maven
 3. Install dependencies: `mvn install`
 4. Run the project: `mvn exec:java` or check `pom.xml` for specific run commands
@@ -119,4 +119,5 @@ Contributions are welcome! Here's how you can help:
 4. **Commit** your changes: `git commit -am 'Add some feature'`
 5. **Push** to your branch: `git push origin feature/your-feature`
 6. **Open** a pull request
+
 
