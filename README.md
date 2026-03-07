@@ -8,13 +8,14 @@ StockX-API is a robust and efficient Java-based API wrapper designed to interact
 
 ## ✨ Features
 
-- 🧪 Testing
+- 🧪 Now in Testing
 
 
 ## 🛠️ Tech Stack
 
 - ☕ Java (Maven)
 
+- spring boot 3.x
 
 ## 📦 Key Dependencies
 
