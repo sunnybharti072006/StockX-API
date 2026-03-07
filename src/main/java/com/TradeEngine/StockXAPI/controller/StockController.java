@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/stocks")
+
 public class StockController {
 
     private final StockService stockService;
@@ -16,13 +17,15 @@ public class StockController {
     public StockController(StockService stockService){
         this.stockService = stockService;
     }
-
+   
+    //Create The Stocks
     @PostMapping("/create")
     public Stock createStock(@RequestBody Stock stock){
         System.out.println(stock);
         return stockService.createStock(stock);
     }
 
+    //Get The Stock 
     @GetMapping
     public List<Stock> getAllStocks(){
         return stockService.getAllStocks();
