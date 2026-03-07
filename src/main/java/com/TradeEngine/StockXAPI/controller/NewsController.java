@@ -15,10 +15,12 @@ public class NewsController {
     public NewsController(NewsRepository newsRepository){
         this.newsRepository = newsRepository;
     }
+    //Post the News With PostMan
     @PostMapping("/create")
     public  MarketNews createNews(@RequestBody MarketNews news){
         return newsRepository.save(news);
     }
+    //Get news
     @GetMapping
     public List<MarketNews> getAllNews(){
         return newsRepository.findAll();
