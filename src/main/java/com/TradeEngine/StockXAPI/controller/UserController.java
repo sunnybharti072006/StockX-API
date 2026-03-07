@@ -28,6 +28,8 @@ public class UserController {
                 request.getPassword()
         );
     }
+    
+    //Get All user
     @GetMapping("/alluser")
     public List<UserDTO> getAllUsers() {
         List<User> users = userService.getAllUsers();
