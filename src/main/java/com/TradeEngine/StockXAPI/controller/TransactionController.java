@@ -15,7 +15,8 @@ public class TransactionController {
     public TransactionController(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
     }
-
+ 
+    //Get The Transaction History 
     @GetMapping("/{userId}")
     public List<Transaction> getUserTransactions(@PathVariable Long userId) {
         return transactionRepository.findByUser_IdOrderByTimestampDesc(userId);
