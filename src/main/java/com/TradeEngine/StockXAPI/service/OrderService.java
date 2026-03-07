@@ -98,6 +98,7 @@ public class OrderService {
         walletRepository.save(wallet);
 
         // FIX: Builder methods matching Order.java field names
+
         Order order = Order.builder()
                 .userId(userId)
                 .stockId(stockId)
