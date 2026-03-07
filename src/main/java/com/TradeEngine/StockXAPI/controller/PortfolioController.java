@@ -15,6 +15,8 @@ public class PortfolioController {
     public PortfolioController(PortfolioService portfolioService){
         this.portfolioService = portfolioService;
     }
+
+    //Get The User Portfolio via UserId
     @GetMapping("/{userId}")
     public List<Portfolio> getPortfolio(@PathVariable Long userId){
         return portfolioService.getUserPortfolio(userId);
