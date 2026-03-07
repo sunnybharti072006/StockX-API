@@ -19,6 +19,9 @@ public class UserController {
     public UserController(UserService userService){
         this.userService = userService;
     }
+
+    //Create The User or Post the User details to api with Postman api
+
     @PostMapping("/create")
     public User createUser(@RequestBody CreateUserRequest request){
         return userService.createUser(
